@@ -32,7 +32,7 @@
       "target": "dmg"
     },
     "win": {
-      "target": "exe"
+      "target": "portable"
     },
     "linux": {
       "target": "deb"
