@@ -23,6 +23,7 @@ pip install ./dist/pypanelx-1.0.0-py3-none-any.whl
 ```
 ### Then:
 ```
+instaloader -l userNameUsedToDownload
 pypanel
 ```
 Files will be downloaded inside "pypanelMedia" in the directory where pypanel has been executed.
