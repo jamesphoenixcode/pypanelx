@@ -1,4 +1,5 @@
 from tools import iltools
+from meditor import meditor
 from platform import system
 import os
 import datetime
@@ -36,6 +37,7 @@ class PyPanelX:
         print("[1]. Single Mode")
         print("[2]. Database / Batch Mode")
         print("[3]. Just Update Data Base")
+        print("[4]. MEditor")
         print()
 
     def singleModeMenu(self):
@@ -125,6 +127,11 @@ class PyPanelX:
             print(f"Option {self.option} not recognized.")
         return 0
 
+    def mEditor(self):
+        self.clear()
+
+        pass
+
     def access(self):
         self.clear()
         self.mainMenu()
@@ -135,6 +142,10 @@ class PyPanelX:
         elif self.option == 2:
             self.clear()
             self.batchModePrints()
+        elif self.option == 3:
+            pass
+        elif self.option == 4:
+            self.MEditor()
         else:
             self.clear()
             print()

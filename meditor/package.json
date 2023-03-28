@@ -1,0 +1,36 @@
+{
+  "name": "meditor",
+  "version": "1.0.0",
+  "description": "Minimal Monaco Editor",
+  "main": "index.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "keywords": [
+    "electron"
+  ],
+  "author": "James Phoenix",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^23.2.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^23.6.0"
+  },
+  "build": {
+    "appId": "meditor",
+    "asar": true,
+    "directories": {
+      "output": "dist"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "linux": {
+      "target": "deb"
+    }
+  }
+}
