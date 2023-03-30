@@ -5,60 +5,43 @@
 	<meta charset="UTF-8" />
 	<title>Monaco Editor Mini Tool for PyPanelX</title>
 </head>
-<style>
-	body {
-		background-color: #333333;
-		color: #FFFFFF;
-	}
-
-	#container {
-		width: 90vw;
-		height: 600px;
-		resize: both;
-		overflow: none;
-	}
-</style>
+<link rel="stylesheet" href="src/meditor.electron.css">
 
 <body>
 	<main>
 		<header>
+			<h1>Monaco Editor Minimal</h1>
 			<ul>
 				<li>
+					<b>The editor is using:</b>
 					<select name="monaco-lang" id="monaco-lang-selector">
 						<option value="python">Python</option>
 						<option value="html">HTML</option>
 						<option value="javascript">JS</option>
 						<option value="css">CSS</option>
+						<option value="typescript">TS</option>
 					</select>
+				</li>
+				<li>
+					<input type="text" id="fileName">
+					<select id="fileTypeSelector">
+						<option value="py" selected>Python File (.py)</option>
+						<option value="html">HTML (.html)</option>
+						<option value="css">CSS (.css)</option>
+						<option value="ts">TypeScript (.ts)</option>
+						<option value="js">JavaScript (.js)</option>
+						<option value="txt">Plain Text (.txt)</option>
+					</select>
+				</li>
+				<li>
+					<b>To save the file enter a name and select file type, then:</b>
+					<b>Press Ctrl or CMD + S to save the file</b>
 				</li>
 			</ul>
 		</header>
-		<h1>Monaco Editor Minimal for PyPanelX</h1>
 		<div id="container"></div>
 	</main>
 </body>
-
 <script src="src/vs/loader.js"></script>
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		require.config({ paths: { vs: 'src/vs' } });
-
-		require(['vs/editor/editor.main'], function () {
-			const editor = monaco.editor.create(document.getElementById('container'), {
-				value: ['def main(user: str):\n\tprint(user)'].join('\n'),
-				language: 'python',
-				theme: 'vs-dark'
-			});
-
-			var languageSelector = document.getElementById('monaco-lang-selector');
-
-			languageSelector.addEventListener("change", function () {
-				var selectedLang = languageSelector.value;
-
-				monaco.editor.setModelLanguage(editor.getModel(), selectedLang);
-			});
-		});
-	});
-</script>
-
+<script src="src/meditor.electron.js"></script>
 </html>

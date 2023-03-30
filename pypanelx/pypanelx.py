@@ -1,6 +1,9 @@
-from tools import iltools
-from meditor import meditor
 from platform import system
+
+from tools import iltools
+from pypanelxsworker import serviceworker
+from meditor import meditor
+
 import os
 import datetime
 
@@ -13,6 +16,8 @@ class PyPanelX:
         self.system = system()
         self.targetUserName = str
         self.tools = iltools
+        self.meditor = meditor
+        self.serviceworker = serviceworker
 
     def clear(self):
         if self.notSystemSet == True:
@@ -28,7 +33,7 @@ class PyPanelX:
         return 0
 
     def mainMenu(self):
-        print("[Pretty Instaloader Loader CLI]")
+        print("[PyPanelX CLI]")
         print()
         print(f"Today is {datetime.date.today()}, Local DB is up to date: Unknown")
         print()
@@ -37,7 +42,7 @@ class PyPanelX:
         print("[1]. Single Mode")
         print("[2]. Database / Batch Mode")
         print("[3]. Just Update Data Base")
-        print("[4]. MEditor")
+        print("[4]. MEditor and Flask Server")
         print()
 
     def singleModeMenu(self):
@@ -127,11 +132,9 @@ class PyPanelX:
             print(f"Option {self.option} not recognized.")
         return 0
 
-    def mEditor(self):
-        self.clear()
-
+    def meditorExecute(self):
         pass
-
+    
     def access(self):
         self.clear()
         self.mainMenu()
@@ -145,7 +148,8 @@ class PyPanelX:
         elif self.option == 3:
             pass
         elif self.option == 4:
-            self.MEditor()
+            self.meditor.main()
+            self.serviceworker.app.run()
         else:
             self.clear()
             print()
