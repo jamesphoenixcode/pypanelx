@@ -1,8 +1,8 @@
 {
+  "main": "./meditor.js",
   "name": "meditor",
   "version": "1.0.0",
   "description": "Minimal Monaco Editor",
-  "main": "index.js",
   "scripts": {
     "test": "electron ."
   },
