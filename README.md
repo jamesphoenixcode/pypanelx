@@ -31,3 +31,5 @@ pypanelx
 Files will be downloaded inside __"pypanelMedia, pypanelFiles"__ in the directory where pypanel has been executed.
 
 `thanks to coffee and weed i write the most base code in one sunday (03/26/2023)`
+## Archived:
+Better ideas will come, this is the way.
